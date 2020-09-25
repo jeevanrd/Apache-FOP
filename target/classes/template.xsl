@@ -2,7 +2,8 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.1">
 	xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	xmlns:fo="http://www.w3.org/1999/XSL/Format">
-<xsl:template match="OfflinePaperlessKyc"><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+	<xsl:template match="OfflinePaperlessKyc">
+		<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
 			<fo:layout-master-set>
 				<fo:simple-page-master master-name="adhar">
 					<fo:region-body/>
@@ -54,12 +55,12 @@
 	</xsl:template>
 
 	<xsl:template match="Reference">
-<!--		<fo:block><xsl:apply-templates select="Transform"/></fo:block>-->
+		<fo:block><xsl:apply-templates select="Transform"/></fo:block>
 		<fo:block><xsl:value-of select="DigestMethod"/></fo:block>
 		<fo:block><xsl:value-of select="DigestValue"/></fo:block>
 	</xsl:template>
 
-<!--    <xsl:template match="Transforms">-->
-<!--        <fo:block><xsl:value-of select="Transform"/></fo:block>-->
-<!--    </xsl:template>-->
+    <xsl:template match="Transforms">
+        <fo:block><xsl:value-of select="Transform"/></fo:block>
+    </xsl:template>
 </xsl:stylesheet>
